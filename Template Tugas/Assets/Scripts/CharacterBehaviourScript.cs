@@ -48,12 +48,19 @@ public class CharacterBehaviourScript : MonoBehaviour {
 		 * Input
 		 * -----------*/
 		// Character will jump if the player told so and
-		// the character is on ground (so it cannot jump mid-air)
+		// the character is on grou
+		//nd (so it cannot jump mid-air)
 		// TODO : Check if the character is on the ground]
-		   grounded = true;
+		//   grounded = true;
 		// animator.SetBool ("Grounded", grounded);
+
+
 		if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
+		}
+
+		if (healthBar <= 0) {
+			Debug.Log("ded");
 		}
 	}
 
@@ -63,9 +70,10 @@ public class CharacterBehaviourScript : MonoBehaviour {
 		 * -----------*/
 		// Get direction (positive = right, negative = left, zero = nothing)
 		// This is defined in InputManager (Edit->Project Settings->Input)
-		float direction = Input.GetAxisRaw("Horizontal");
-		animator.SetFloat ("speed", Mathf.Abs(direction));
-
+		float direction = Input.GetAxisRaw ("Horizontal");
+		if (grounded) {
+			animator.SetFloat ("speed", Mathf.Abs (direction));
+		} 
 		// Move to direction
 		// Accelerate the object to its max speed
 		if (rigidbody2d.velocity.x * direction < maxSpeed)
@@ -87,26 +95,32 @@ public class CharacterBehaviourScript : MonoBehaviour {
 		// if character is ordered to jump
 		if (jump) {
 			// TODO : Animate character to jump animation
-
+			animator.SetBool ("jump", true);
 			// TODO : get the character jumping
-			//Debug.Log ("I jump!");
+			Debug.Log ("I jump!");
 			grounded = false;
-			rigidbody2d.AddForce(new Vector2(0f, jumpForce));
+			rigidbody2d.AddForce (new Vector2 (0f, jumpForce));
 			// successfully jumped, set jump to false so in next frame
 			// it isn't jump twice
 			jump = false;
+		} else 
+		{
+			if(grounded){
+				animator.SetBool("jump",false);
+			}
 		}
+
 	}
 	void OnTriggerEnter2D(Collider2D collision){
 		if(collision.CompareTag("Ground")){
-		    grounded = true;
+			grounded = true;
+			animator.SetBool("pain",false);
 		}
 		if (collision.gameObject.CompareTag ("Collectible")) {
 			collision.gameObject.SetActive(false);
 		}
 		if (collision.gameObject.CompareTag ("Spike")){
-			healthBar -= 10f;
-			Debug.Log("taking damage");
+			takingDamage(10);
 		}
 	}
 	void OnTriggerExit2D(Collider2D collision){
@@ -114,6 +128,17 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			grounded = false;
 		}
 	}
+
+
+	void takingDamage(int n){
+		healthBar -= n;
+		Debug.Log("taking damage");
+		animator.SetBool("pain",true);
+		rigidbody2d.AddForce (new Vector2 (-1f, jumpForce/2));
+		//invincible 1.5s
+
+	}
+
 	// Flip the character facing direction
 	void Flip() {
 		// flip the flag

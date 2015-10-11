@@ -1,47 +1,43 @@
 Initialize engine version: 5.2.0f3 (e7947df39b5c)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics Family (ID=0xa16)
     Vendor:   Intel
     VRAM:     128 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\System.Core.dll (this message is harmless)
-- Completed reload, in  0.176 seconds
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.073 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-Platform assembly: C:\Users\Thirafi Dide\Downloads\Unity-2D-Platformer-Controller-develop\Template Tugas\template_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\M Hardi R\Documents\Tugas-Gamedev\Template Tugas\template_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1e50 -> priority: 1 
+  Thread -> id: 7f0 -> priority: 1 
 ihik
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 47.064770 ms
+UnloadTime: 7.903949 ms
 
 Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 402.
-Total: 0.625417 ms (FindLiveObjects: 0.315595 ms CreateObjectMapping: 0.026299 ms MarkObjects: 0.273900 ms  DeleteObjects: 0.008980 ms)
+Total: 0.245436 ms (FindLiveObjects: 0.036592 ms CreateObjectMapping: 0.019188 ms MarkObjects: 0.183408 ms  DeleteObjects: 0.005354 ms)
 
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.537565 ms
+I jump!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 398.
-Total: 0.286729 ms (FindLiveObjects: 0.025016 ms CreateObjectMapping: 0.019243 ms MarkObjects: 0.228357 ms  DeleteObjects: 0.012829 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.631832 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 398.
-Total: 0.356648 ms (FindLiveObjects: 0.066069 ms CreateObjectMapping: 0.020526 ms MarkObjects: 0.261071 ms  DeleteObjects: 0.005773 ms)
+I jump!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 64)
 
