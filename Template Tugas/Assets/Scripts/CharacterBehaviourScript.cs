@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CharacterBehaviourScript : MonoBehaviour {
@@ -16,15 +17,15 @@ public class CharacterBehaviourScript : MonoBehaviour {
 	public float jumpForce = 1000f;
 	public float moveForce = 185f;
 	public float maxSpeed = 4f;
+	public float waktuCD = 3f;
+	public float waktu;
 	public bool grounded;
 	private Rigidbody2D rigidbody2d;
 	private Animator animator;
-	public float healthBar;
+	private PlayerHealthScript playerHealth;
+
 	// for full documentation about unity behavior lifecycle
 	// see http://docs.unity3d.com/Manual/ExecutionOrder.html
-	void Start(){
-		healthBar = 100f;
-	}
 	void Awake () {
 		// Animator component animate the object based
 		// on behavior we set in animator
@@ -35,32 +36,28 @@ public class CharacterBehaviourScript : MonoBehaviour {
 		// with the object using rigidbody2d by using physics
 		// properties, like throwing a ball is essentially
 		// add force to ball to specific direction
-		rigidbody2d = GetComponent<Rigidbody2D> ();	
+		rigidbody2d = GetComponent<Rigidbody2D> ();
+		playerHealth = GetComponent<PlayerHealthScript> ();
 	}
-	//void OnTriggerEnter2D(Collider2D col){
-	//	grounded = true;
-	//}
-	//void OnTriggerExit2D(Collider2D col){
-	//	grounded = false;
-	//}
 	void Update () {
 		/*------------
 		 * Input
 		 * -----------*/
 		// Character will jump if the player told so and
-		// the character is on grou
-		//nd (so it cannot jump mid-air)
+		// the character is on ground (so it cannot jump mid-air)
 		// TODO : Check if the character is on the ground]
-		//   grounded = true;
-		// animator.SetBool ("Grounded", grounded);
+		// grounded = true;
+		// animator.SetBool ("Grounded",\ grounded);
 
 
 		if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
 		}
-
-		if (healthBar <= 0) {
-			Debug.Log("ded");
+		if (playerHealth.immune == true) {
+			waktu -= Time.deltaTime;
+			if (waktu <= 0f) {
+				playerHealth.immune = false;
+			}
 		}
 	}
 
@@ -97,7 +94,7 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			// TODO : Animate character to jump animation
 			animator.SetBool ("jump", true);
 			// TODO : get the character jumping
-			Debug.Log ("I jump!");
+			// Debug.Log ("I jump!");
 			grounded = false;
 			rigidbody2d.AddForce (new Vector2 (0f, jumpForce));
 			// successfully jumped, set jump to false so in next frame
@@ -120,23 +117,18 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			collision.gameObject.SetActive(false);
 		}
 		if (collision.gameObject.CompareTag ("Spike")){
-			takingDamage(10);
+			playerHealth.takingDamage(10);
+		}
+		if (collision.gameObject.CompareTag ("Power Up")){
+			collision.gameObject.SetActive(false);
+			playerHealth.immune = true;
+			waktu = waktuCD;
 		}
 	}
 	void OnTriggerExit2D(Collider2D collision){
 		if(collision.CompareTag("Ground")){
 			grounded = false;
 		}
-	}
-
-
-	void takingDamage(int n){
-		healthBar -= n;
-		Debug.Log("taking damage");
-		animator.SetBool("pain",true);
-		rigidbody2d.AddForce (new Vector2 (-1f, jumpForce/2));
-		//invincible 1.5s
-
 	}
 
 	// Flip the character facing direction
