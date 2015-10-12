@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterBehaviourScript.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerHealthScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterBehaviourScript.cs" Line="76" Column="5" />
+      <File FileName="Assets\Scripts\CharacterBehaviourScript.cs" Line="57" Column="9" />
+      <File FileName="Assets\PlayerHealthScript.cs" Line="61" Column="4" />
+      <File FileName="Assets\Scripts\CameraMovementScript.cs" Line="8" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
