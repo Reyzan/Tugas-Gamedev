@@ -117,7 +117,8 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			collision.gameObject.SetActive(false);
 		}
 		if (collision.gameObject.CompareTag ("Spike")){
-			playerHealth.takingDamage(10);
+			playerHealth.takingDamage(10f);
+			playerHealth.healthAmount(0.1f);
 		}
 		if (collision.gameObject.CompareTag ("Power Up")){
 			collision.gameObject.SetActive(false);

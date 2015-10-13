@@ -29,11 +29,9 @@ public class PlayerHealthScript : MonoBehaviour {
 	void Update () {
 		healthColor ();
 	}
-	public void takingDamage(int n){
+	public void takingDamage(float n){
 		if(!immune){
 			currentHealth -= n; 
-			healthbar.fillAmount -= 0.1f;
-			Debug.Log ("taking damage");
 			animator.SetBool ("pain", true);
 			rigidbody2d.AddForce (new Vector2 (-1f, characterBehaviour.jumpForce / 2));
 
@@ -42,20 +40,22 @@ public class PlayerHealthScript : MonoBehaviour {
 			}
 		}
 	}
+	public void healthAmount(float n){
+		if (!immune) {
+			healthbar.fillAmount -= n;
+		}
+	}
 	public void healthColor(){
 		if (immune) {
 			healthbar.color = new Color (0f, 1f, 1f, 1f);
 		} else {
 			if (currentHealth >= 50f) {
-				Debug.Log ("green");
 				healthbar.color = new Color (0f, 1f, 0f, 1f);
 			}
 			if (currentHealth >= 25f && currentHealth < 50f) {
-				Debug.Log ("orange");
 				healthbar.color = new Color (1f, 0.35f, 0f, 1f);
 			}
 			if (currentHealth < 25f) {
-				Debug.Log ("red");
 				healthbar.color = new Color (1f, 0f, 0f, 1f);
 			}
 		}
