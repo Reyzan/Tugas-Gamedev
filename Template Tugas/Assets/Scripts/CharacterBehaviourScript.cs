@@ -125,6 +125,10 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			playerHealth.immune = true;
 			waktu = waktuCD;
 		}
+		if (collision.gameObject.CompareTag ("Bullet")){
+			playerHealth.takingDamage(10f);
+			playerHealth.healthAmount(0.1f);
+		}
 	}
 	void OnTriggerExit2D(Collider2D collision){
 		if(collision.CompareTag("Ground")){
