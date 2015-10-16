@@ -117,12 +117,17 @@ public class CharacterBehaviourScript : MonoBehaviour {
 			collision.gameObject.SetActive(false);
 		}
 		if (collision.gameObject.CompareTag ("Spike")){
-			playerHealth.takingDamage(10);
+			playerHealth.takingDamage(10f);
+			playerHealth.healthAmount(0.1f);
 		}
 		if (collision.gameObject.CompareTag ("Power Up")){
 			collision.gameObject.SetActive(false);
 			playerHealth.immune = true;
 			waktu = waktuCD;
+		}
+		if (collision.gameObject.CompareTag ("Bullet")){
+			playerHealth.takingDamage(10f);
+			playerHealth.healthAmount(0.1f);
 		}
 	}
 	void OnTriggerExit2D(Collider2D collision){
